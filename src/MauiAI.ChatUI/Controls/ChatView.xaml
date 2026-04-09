@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    x:Class="MauiAI.ChatUI.Controls.ChatView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:MauiAI.ChatUI.Controls"
+    xmlns:models="clr-namespace:MauiAI.ChatUI.Models"
+    x:Name="Root">
+
+    <ContentView.Resources>
+        <Color x:Key="SurfaceColor">#FFFFFF</Color>
+        <Color x:Key="SurfaceBorderColor">#D1D5DB</Color>
+        <Color x:Key="AiBubbleColor">#F3F4F6</Color>
+        <Color x:Key="AiTextColor">#111827</Color>
+        <Color x:Key="UserBubbleColor">#2563EB</Color>
+        <Color x:Key="UserTextColor">#FFFFFF</Color>
+        <Color x:Key="InputBackgroundColor">#FFFFFF</Color>
+    </ContentView.Resources>
+
+    <Grid
+        Padding="16"
+        RowDefinitions="*,Auto"
+        RowSpacing="12">
+
+        <Border
+            Grid.Row="0"
+            BackgroundColor="{StaticResource SurfaceColor}"
+            Stroke="{StaticResource SurfaceBorderColor}"
+            StrokeThickness="1">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="24" />
+            </Border.StrokeShape>
+
+            <CollectionView
+                x:Name="MessagesView"
+                ItemsSource="{Binding Source={x:Reference Root}, Path=Messages}"
+                ItemSizingStrategy="MeasureAllItems"
+                SelectionMode="None">
+
+                <CollectionView.EmptyView>
+                    <Grid Padding="28">
+                        <VerticalStackLayout
+                            HorizontalOptions="Center"
+                            MaximumWidthRequest="320"
+                            Spacing="8"
+                            VerticalOptions="Center">
+
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="24"
+                                HorizontalTextAlignment="Center"
+                                Text="{Binding Source={x:Reference Root}, Path=EmptyStateTitle}"
+                                TextColor="#111827" />
+
+                            <Label
+                                FontSize="14"
+                                HorizontalTextAlignment="Center"
+                                Text="{Binding Source={x:Reference Root}, Path=EmptyStateSubtitle}"
+                                TextColor="#6B7280" />
+                        </VerticalStackLayout>
+                    </Grid>
+                </CollectionView.EmptyView>
+
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout ItemSpacing="8" Orientation="Vertical" />
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:ChatMessage">
+                        <Border
+                            Margin="12,4"
+                            Padding="14,12"
+                            BackgroundColor="{StaticResource AiBubbleColor}"
+                            HorizontalOptions="Start"
+                            MaximumWidthRequest="560"
+                            StrokeThickness="0">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="20" />
+                            </Border.StrokeShape>
+
+                            <controls:MarkdownView
+                                CodeBackgroundColor="#0F172A"
+                                CodeTextColor="White"
+                                InlineCodeBackgroundColor="#E5E7EB"
+                                Text="{Binding Content}"
+                                TextColor="{StaticResource AiTextColor}">
+                                <controls:MarkdownView.Triggers>
+                                    <DataTrigger
+                                        Binding="{Binding IsUser}"
+                                        TargetType="controls:MarkdownView"
+                                        Value="True">
+                                        <Setter Property="TextColor" Value="{StaticResource UserTextColor}" />
+                                        <Setter Property="InlineCodeBackgroundColor" Value="#BFDBFE" />
+                                        <Setter Property="CodeBackgroundColor" Value="#1D4ED8" />
+                                        <Setter Property="CodeTextColor" Value="White" />
+                                    </DataTrigger>
+                                </controls:MarkdownView.Triggers>
+                            </controls:MarkdownView>
+
+                            <Border.Triggers>
+                                <DataTrigger
+                                    Binding="{Binding IsUser}"
+                                    TargetType="Border"
+                                    Value="True">
+                                    <Setter Property="BackgroundColor" Value="{StaticResource UserBubbleColor}" />
+                                    <Setter Property="HorizontalOptions" Value="End" />
+                                </DataTrigger>
+                            </Border.Triggers>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Border>
+
+        <Grid
+            Grid.Row="1"
+            ColumnDefinitions="*,Auto"
+            ColumnSpacing="12">
+
+            <Border
+                BackgroundColor="{StaticResource InputBackgroundColor}"
+                Stroke="{StaticResource SurfaceBorderColor}"
+                StrokeThickness="1">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20" />
+                </Border.StrokeShape>
+
+                <Editor
+                    Margin="14,10"
+                    AutoSize="TextChanges"
+                    BackgroundColor="Transparent"
+                    MaxLength="4000"
+                    Placeholder="{Binding Source={x:Reference Root}, Path=PlaceholderText}"
+                    Text="{Binding Source={x:Reference Root}, Path=InputText, Mode=TwoWay}" />
+            </Border>
+
+            <Button
+                Grid.Column="1"
+                Clicked="OnSendClicked"
+                CornerRadius="18"
+                HeightRequest="52"
+                HorizontalOptions="End"
+                IsEnabled="{Binding Source={x:Reference Root}, Path=CanSend}"
+                Padding="22,0"
+                Text="{Binding Source={x:Reference Root}, Path=SendButtonText}"
+                VerticalOptions="End" />
+        </Grid>
+    </Grid>
+</ContentView>

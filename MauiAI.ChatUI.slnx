@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/samples/">
+    <Project Path="samples/MauiAI.ChatUI.Sample/MauiAI.ChatUI.Sample.csproj" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/MauiAI.ChatUI/MauiAI.ChatUI.csproj" />
+  </Folder>
+</Solution>

@@ -1,0 +1,5 @@
+D:\MauiAI.ChatUI\.packobj\MauiAI.ChatUI\Release\net10.0-windows10.0.19041.0\MauiAI.ChatUI.csproj.AssemblyReference.cache
+D:\MauiAI.ChatUI\.packobj\MauiAI.ChatUI\Release\net10.0-windows10.0.19041.0\MauiAI.ChatUI.GeneratedMSBuildEditorConfig.editorconfig
+D:\MauiAI.ChatUI\.packobj\MauiAI.ChatUI\Release\net10.0-windows10.0.19041.0\MauiAI.ChatUI.AssemblyInfoInputs.cache
+D:\MauiAI.ChatUI\.packobj\MauiAI.ChatUI\Release\net10.0-windows10.0.19041.0\MauiAI.ChatUI.AssemblyInfo.cs
+D:\MauiAI.ChatUI\.packobj\MauiAI.ChatUI\Release\net10.0-windows10.0.19041.0\MauiAI.ChatUI.csproj.CoreCompileInputs.cache

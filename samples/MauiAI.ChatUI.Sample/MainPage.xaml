@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiAI.ChatUI.Sample.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ai="clr-namespace:MauiAI.ChatUI.Controls;assembly=MauiAI.ChatUI"
+    BackgroundColor="#F8FAFC">
+
+    <Grid
+        Padding="20"
+        RowDefinitions="Auto,*"
+        RowSpacing="16">
+
+        <Border
+            BackgroundColor="White"
+            Padding="18"
+            Stroke="#D1D5DB"
+            StrokeThickness="1">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="20" />
+            </Border.StrokeShape>
+
+            <VerticalStackLayout Spacing="8">
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="24"
+                    Text="MauiAI.ChatUI Sample"
+                    TextColor="#111827" />
+
+                <Label
+                    FontSize="14"
+                    Text="Set OPENAI_API_KEY as an environment variable or replace the placeholder in MauiProgram.cs, then start chatting to validate streaming responses."
+                    TextColor="#475569" />
+            </VerticalStackLayout>
+        </Border>
+
+        <ai:ChatView Grid.Row="1" />
+    </Grid>
+
+</ContentPage>
