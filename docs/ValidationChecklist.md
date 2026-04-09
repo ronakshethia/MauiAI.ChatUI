@@ -30,7 +30,7 @@ Use this checklist after building the library or consuming the NuGet package.
 ## Packaging
 
 1. Run `dotnet pack src/MauiAI.ChatUI/MauiAI.ChatUI.csproj -c Release`.
-2. Confirm the generated `.nupkg` metadata uses `PackageId` = `MauiAI.ChatUI`.
+2. Confirm the generated `.nupkg` metadata uses `PackageId` = `MauiAIChatKit`.
 3. Confirm the package description, tags, and README are present in the package metadata.
 4. Install the package into a fresh MAUI app and verify setup takes less than 10 minutes.
 

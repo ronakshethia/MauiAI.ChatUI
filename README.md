@@ -46,7 +46,7 @@ To keep the package simple and fast:
 ## 📦 Installation
 
 ```bash
-dotnet add package MauiAI.ChatUI
+dotnet add package MauiAIChatKit
 ```
 
 ---
