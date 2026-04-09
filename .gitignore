@@ -1,0 +1,40 @@
+# Build output
+**/[Bb]in/
+**/[Oo]bj/
+**/binpack/
+**/objpack/
+.packbin/
+.packobj/
+
+# NuGet packages
+*.nupkg
+*.snupkg
+*.nuspec
+packages/
+
+# IDE and editor files
+.vs/
+.vscode/
+.idea/
+*.suo
+*.user
+*.userprefs
+*.rsuser
+
+# Test and coverage output
+TestResults/
+*.coverage
+*.coveragexml
+
+# Logs and diagnostics
+*.log
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# MAUI / signing artifacts
+*.keystore
+*.jks
+*.p12
+*.mobileprovision
