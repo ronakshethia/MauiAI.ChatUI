@@ -1,0 +1,10 @@
+# Ignore build outputs
+bin/ linguist-vendored
+obj/ linguist-vendored
+
+# Ignore generated Android files
+**/*.java linguist-generated
+**/*.aidl linguist-generated
+
+# Force C# detection
+*.cs linguist-detectable=true
