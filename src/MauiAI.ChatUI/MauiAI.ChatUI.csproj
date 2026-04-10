@@ -16,7 +16,7 @@
 		<Nullable>enable</Nullable>
 		<RootNamespace>MauiAI.ChatUI</RootNamespace>
 		<IsPackable>true</IsPackable>
-		<PackageId>MauiAI.ConversationUI</PackageId>
+		<PackageId>Ronak.MauiAI.ChatUI</PackageId>
 		<Version>1.0.0</Version>
 		<Authors>Ronak Shetiya</Authors>
 		<Company>Ronak Shetiya</Company>
