@@ -1,12 +1,12 @@
-# 🚀 MauiAI.ChatUI
+# 🚀 MauiAI.ConversationUI
 
 ### 🔥 Add ChatGPT-like UI to your .NET MAUI app in minutes
 
-> **MauiAI.ChatUI** is a lightweight, plug-and-play AI chat UI for .NET MAUI with **streaming responses**, **basic markdown support**, and **OpenAI integration**.
+> **MauiAI.ConversationUI** is a lightweight, plug-and-play AI chat UI for .NET MAUI with **streaming responses**, **basic markdown support**, and **OpenAI integration**.
 
 ---
 
-## ✨ Why MauiAI.ChatUI?
+## ✨ Why MauiAI.ConversationUI?
 
 Building AI chat in MAUI today requires:
 
@@ -46,7 +46,7 @@ To keep the package simple and fast:
 ## 📦 Installation
 
 ```bash
-dotnet add package MauiAIChatKit
+dotnet add package MauiAI.ConversationUI
 ```
 
 ---
